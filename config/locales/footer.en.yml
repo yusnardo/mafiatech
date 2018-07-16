@@ -1,0 +1,8 @@
+en:
+  footer:
+    copyright:
+      text: "© %{year}. All Rights Reserved. Made with"
+      created: "by MafiaTech"
+      about: "MafiaTech is website that is engaged in education"
+      pm: "Payment Method"
+      ss: "Shopping Security"

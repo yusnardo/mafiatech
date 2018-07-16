@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  scope '/:locale' do
-    root 'home#index'
+  root to: redirect("/#{I18n.default_locale}", status: 302), as: :redirected_root  
+  scope '/:locale' , :locale => /en|id/ do
+  	root 'home#index'
+  	
   	get 'course', to: "course#index"
   	get 'blog', to: "blog#index"
   end

@@ -1,0 +1,29 @@
+.fc-copyright
+  .container
+    .row
+      .col-sm-6.fc-copyright__text
+        p = t("footer.copyright.pm")
+        ul.list-inline
+          - (1..6).each do |i|
+            li = image_tag "payment-method/pm-#{i}.png", class: "img-responsive", size: "60"
+      
+      .col-sm-6.fc-copyright__text
+        p = t("footer.copyright.ss")
+        ul.list-inline
+          - (1..4).each do |i|
+            li = image_tag "footer/ss-#{i}.png", class: "img-responsive", size: "60"
+    
+    .row
+      .col-sm-6
+        ul.list-inline.u-mt--10
+          li
+            span = t("footer.copyright.about")
+    
+    .row
+      .col-sm-12
+        ul.list-inline.u-mt--10
+          li
+            span = t("footer.copyright.text", :year => DateTime.now.year)
+          li.text-danger = fa_icon 'heart'
+          li
+            span = t("footer.copyright.created")
