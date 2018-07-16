@@ -1,0 +1,32 @@
+.fl-hellobar-info.visible-lg
+    .row.fl-hellobar-info__content
+      .col-sm-8
+        ul.list-inline.u-mb--no
+          li
+            span.u-mr--10 = t("general.info.consult")
+          li
+            = fa_icon 'phone lg', class: "u-mr--5"
+            span +62 82393073148
+          li
+            = fa_icon 'envelope-o lg', class: "u-mr--5"
+            = mail_to t("general.info.mail")
+
+      .col-sm-4.text-right
+        ul.list-inline.u-mb--no
+          li.dropdown.u-pr--no
+            a.dropdown-toggle data-toggle="dropdown" href="#"
+              - if I18n.locale.to_s == "id"
+                = image_tag('flag/flag_of_id.png', size: '30x20', alt:'Indonesian')
+              - else
+                = image_tag('flag/flag_of_en.png', size: '30x20', alt:'English')
+              span.u-ml--5
+                = fa_icon 'angle-down'
+            / ul.dropdown-menu.fl-hellobar-info__dropdown
+            /   li 
+            /     = link_to params.merge(locale: 'en'), :"data-no-turbolink" => true do
+            /       = image_tag('flag/flag_of_en.png', size: '30x20', alt:'Flag of English')
+            /       span.u-ml--5 = "English"
+            /   li 
+            /     = link_to params.merge(locale: 'id'), :"data-no-turbolink" => true do
+            /       = image_tag('flag/flag_of_id.png', size: '30x20', alt:'Flag of Indonesia')
+            /       span.u-ml--5 = "Indonesia"

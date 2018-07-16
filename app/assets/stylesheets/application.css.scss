@@ -1,0 +1,69 @@
+@import 'bootstrap'; 
+@import "font-awesome";
+
+body.has-fc-offcanvas {
+    -webkit-transition: transform 0.3s ease;
+    -o-transition: transform 0.3s ease;
+    transition: transform 0.3s ease;
+    width: 100%;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.42857143;
+    color: #333333;
+    background-color: #ffffff;
+}
+a{
+	color:#fff;
+}
+.row {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+.nav-item{
+    align-items: center;
+}
+.fc-navbar__christmast {
+    background-color: #17a2b8;
+    height: 50px;
+}
+.bg-red{
+ 	background-color: #17a2b8;	
+}
+.logo{
+	font-weight: bold;
+	font-size: 22px;
+}
+.fl-hellobar-info {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 100px;
+    padding-right: 100px;
+    background-color: #000000;
+    color: #c7c7c7;
+    font-size: 12px;
+}
+.u-mb--no {
+    margin-bottom: 0;
+}
+.list-inline {
+    padding-left: 0;
+    list-style: none;
+    margin-left: -5px;
+}
+.u-mr--10 {
+    margin-right: 10px;
+}
+.list-inline>li {
+    display: inline-block;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.centering{
+	margin-left: 100px;
+	margin-right: 100px;
+}
+.nav-link{
+	padding-top: 10px;
+}

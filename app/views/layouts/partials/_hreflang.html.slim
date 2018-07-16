@@ -1,0 +1,4 @@
+- %w(en id).each do |lang|
+  - query_params = request.query_parameters
+  - query_params.merge!(locale: lang, only_path: false)
+  link rel="alternate" hreflang="#{lang}" href="#{url_for(query_params)}"
