@@ -43,6 +43,10 @@ end
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
+  #gem 'binding_of_caller', '~> 0.7.2'
+    # Debuging
+  gem 'pry-rails'
+  #gem 'pry-nav'
 end
 
 group :test do
