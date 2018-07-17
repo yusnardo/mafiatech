@@ -21,10 +21,12 @@
                 = image_tag('flag/flag_of_en.png', size: '30x20', alt:'English')
             ul.dropdown-menu.fl-hellobar-info__dropdown
               li 
-                = link_to params["locale"]="en", :"data-no-turbolink" => true do
+                / = link_to params["locale"]="en", :"data-no-turbolink" => true do
+                = link_to "en", params.merge(locale: "en"), :"data-no-turbolink" => true do
                   = image_tag('flag/flag_of_en.png', size: '30x20', alt:'Flag of English')
                   span.u-ml--5 = "English"
               li 
-                = link_to params["locale"]="id", :"data-no-turbolink" => true do
+                / = link_to params["locale"]="id", :"data-no-turbolink" => true do
+                = link_to "id", params.merge(locale: "id"), :"data-no-turbolink" => true do
                   = image_tag('flag/flag_of_id.png', size: '30x20', alt:'Flag of Indonesia')
                   span.u-ml--5 = "Indonesia"
