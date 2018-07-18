@@ -1,93 +1,40 @@
-.modal.fade.fc-modal-fs id="modal_login_register" tabindex="-1" role="dialog" aria-labelledby="modal_login_register_label"
+.modal.fade.fc-modal-fs id="modal_login" tabindex="-1" role="dialog" aria-labelledby="modal_login_label"
   .modal-dialog.fc-modal-fs__dialog role="document"
     .modal-content.fc-modal-fs__content
       .modal-body
         .container
           .row
-            .col-sm-6.col-center.u-mt-20
-              ul class="nav nav-pills fc-nav" role="tablist"
-                li.active role="presentation"
-                  a href="#register" aria-controls="register" role="tab" data-toggle="tab" = t('general.link.register')
-                li role="presentation"
-                  a href="#login" aria-controls="login" role="tab" data-toggle="tab" = t('general.link.login')
-                button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-top: 15px;"
-                  span aria-hidden="true" &times;
-                
-              .tab-content
-                .tab-pane.active role="tabpanel" id="register"
-                  h1.fc-heading__bright--md.u-mt--30 = t('general.link.register_client')
-                  / Form register
-                  form#form_register action="#{register_path}"
-                    input.input-redirect-url type="hidden" name="redirect_url" class="form-control"
-                    = hidden_field_tag :register_from, "modal-register-order-design"
-                    = hidden_field_tag :register_server, Socket.gethostname
+            .col-sm-6.col-center.u-mt-20   
+              button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-top: 15px;"
+                span aria-hidden="true" &times;       
+              form#form_login_only action="#{session_path}"
+                h1.fc-heading__bright--md.u-mt--30 = t('login.title_big')
+                p.fc-subheading.u-mb--30 == t('login.title', :home_link => link_to('Sribu', root_path))
+                = hidden_field_tag :redirect_url, request.original_url
+                / Field username
+                .form-group.with-icon
+                  = text_field_tag :username, "", required: true, class: "form-control input-lg", id: 'username', :placeholder => t('login.placeholder.username'), :data => {validation: "length", :"validation-length" => "2-50", :"validation-error-msg" => t('login.error.username')}
+                  span
+                    = fa_icon 'user'
 
-                    / Radio button mamber type
-                    .form-group
-                      span
-                        / Member type CH
-                        input name="member_type" type="hidden" value="contest_holder" checked="true"
+                / Field password
+                .form-group.with-icon
+                  = password_field_tag :password, "", required: true, class: "form-control input-lg", id: 'passsword', :placeholder => t('login.placeholder.password'), :data => {validation: "length", :"validation-length" => "min6", :"validation-error-msg" => t('login.error.password')}
+                  span
+                    = fa_icon 'lock'
 
-                    / Field full name
-                    .form-group.with-icon
-                      = text_field_tag :name, "", class: "form-control input-lg", id: 'name', :placeholder => t('general.place_holder.ph_name'), :data => {validation: "length", :"validation-length" => "3-50", :"validation-error-msg" => t('register.error.name_empty')}
-                      span
-                        = fa_icon 'user'
+                .form-group
+                  / Remember me
+                  span
+                    / label.checkbox-inline
+                    /   input type="checkbox" value="" = t('login.remember')
+                  / Forgot password
+                  / span.pull-right.fl-login__forgot
+                  /   = link_to t("login.forgot"), new_reset_password_path
 
-                    / Field email address
-                    .form-group.with-icon
-                      = text_field_tag :email, "", class: "form-control input-lg", id: 'email', :placeholder => t('general.place_holder.ph_email'), :data => {validation: "email", :"validation-error-msg" => t('register.error.email')}
-                      span
-                        = fa_icon 'envelope'
+                / Submit login
+                .form-group
+                  = submit_tag t("general.link.login"), class: "btn btn-lg btn-block btn-success"
 
-                    / Field password
-                    .form-group.with-icon
-                      = password_field_tag :password, "", class: "form-control input-lg", id: 'password', :placeholder => t('general.place_holder.ph_password'), :data => {validation: "length", :"validation-length" => "min6", :"validation-error-msg" => t('register.error.password')}
-                      span
-                        = fa_icon 'key'
-
-                    / Field password
-                    .form-group
-                      .row
-                        .col-sm-12.col-md-5.u-mb--10
-                          .bs-select-native
-                            = select_tag :country_code, options_for_select(@countries.collect {|i| [ "#{i.name} (+#{i.phone_code})", i.code ] }, 'id'), include_blank: false, class: "form-control input-lg"
-                        .col-sm-12.col-md-7
-                          = telephone_field_tag :contact_number, nil, class: "form-control input-lg js-input-only-number inspectletIgnore", required: true, minlength: '5', maxlength: '12', :placeholder => t('general.place_holder.ph_tlp'), :data => {validation: "length", :"validation-length" => "5-12", :"validation-error-msg" => t('register.error.phone')}
-
-                    / Submit register
-                    .form-group
-                      == t('register.client_code_of_conduct')
-                      .u-mb--20
-                      = submit_tag t("general.btn.register_as_client"), class: "btn btn-block btn-lg btn-success"
-                    
-                .tab-pane role="tabpanel" id="login"
-                  form#form_login action="#{sessions_path}"
-                    h1.fc-heading__bright--md.u-mt--30 = t('login.title_big')
-                    p.fc-subheading.u-mb--30 == t('login.title', :home_link => link_to('Sribu', root_path))
-
-                    input.input-redirect-url type="hidden" name="redirect_url" class="form-control"
-                      / Field username
-                      .form-group.with-icon
-                        = text_field_tag :username, "", required: true, class: "form-control input-lg", id: 'username', :placeholder => t('login.placeholder.username'), :data => {validation: "length", :"validation-length" => "2-50", :"validation-error-msg" => t('login.error.username')}
-                        span
-                          = fa_icon 'user'
-
-                      / Field password
-                      .form-group.with-icon
-                        = password_field_tag :password, "", required: true, class: "form-control input-lg", id: 'passsword', :placeholder => t('login.placeholder.password'), :data => {validation: "length", :"validation-length" => "min6", :"validation-error-msg" => t('login.error.password')}
-                        span
-                          = fa_icon 'lock'
-
-                      .form-group
-                        / Remember me
-                        span
-                          / label.checkbox-inline
-                          /   input type="checkbox" value="" = t('login.remember')
-                        / Forgot password
-                        span.pull-right.fl-login__forgot
-                          = link_to t("login.forgot"), new_reset_password_path
-
-                      / Submit login
-                      .form-group
-                        = submit_tag t("general.link.login"), class: "btn btn-lg btn-block btn-success"
+                .form-group
+                  p.fl-login__signup == t('login.register', :register_link => link_to(t('general.link.register').downcase, sign_in_path))

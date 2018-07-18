@@ -2,16 +2,17 @@
 	#navbarNav.collapse.navbar-collapse
 		.container.visible-lg
 	    	.row
-    				ul.nav.navbar-nav.navbar-left
-			    		li.nav-item.active
-			    			a.navbar-brand.logo href="/" title="MafiaTech" MafiaTech
-			      		li.nav-item
-			        		span.nav-link = link_to t('general.link.course'), course_path
-			      		li.nav-item
-			        		span.nav-link = link_to t('general.link.blog'), blog_path
-		        	ul.nav.navbar-nav.ml-auto.push-left
-			        	li.nav-item
-			        		span = link_to "#", :'data-toggle' => 'modal', :'data-target' => '#modal_login' do
-			        			= link_to t('general.link.login')
-			      		li.nav-item
-			        		span.nav-link = link_to t('general.link.register'), sign_up_path
+				ul.nav.navbar-nav.navbar-left
+		    		li.nav-item.active
+		    			a.navbar-brand.logo href="/" title="MafiaTech" MafiaTech
+		      		li.nav-item
+		        		span.nav-link = link_to t('general.link.course'), course_path
+		      		li.nav-item
+		        		span.nav-link = link_to t('general.link.blog'), blog_path
+	        	ul.nav.navbar-nav.ml-auto.push-left
+		        	li.nav-item
+		        		span.nav-link
+			        		= link_to "#", :'data-toggle' => 'modal', :'data-target' => '#modal_login' do 
+			        			= t('general.link.login')
+		      		li.nav-item
+		        		span.nav-link = link_to t('general.link.register'), sign_up_path

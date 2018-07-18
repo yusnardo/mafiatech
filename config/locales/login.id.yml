@@ -1,0 +1,14 @@
+id:
+  login:
+    title_big: Masuk MafiaTech
+    title: "Masuk ke akun %{home_link} Anda"
+    remember: "Ingat saya"
+    forgot: "Lupa kata sandi?"
+    register: "Belum memiliki akun? Silakan %{register_link}, Gratis!"
+    placeholder:
+      username: "Email atau username Anda"
+      password: "Kata sandi Anda"
+    error:
+      username: "Email atau username Anda harus diisi"
+      password: "Kata sandi Anda harus diisi"
+      username_2: "Username atau password yang Anda masukkan salah."

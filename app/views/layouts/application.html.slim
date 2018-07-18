@@ -15,15 +15,17 @@ html
     = yield :head
   
   body class="has-fc-offcanvas" data-controller="#{controller_path}" data-action="#{action_name}" data-locale="#{locale}"
+    = render "layouts/modals/modal_login"
     header
+        = render 'layouts/hellobar/info'
+        = render "layouts/navbar/navbar"
         - if signed_in?
             | Signed in as: #{current_user.email}
             | \#{button_to 'Sign out', sign_out_path, method: :delete}
         - else
             = link_to 'Sign in', sign_in_path
 
-        = render 'layouts/hellobar/info'
-        = render "layouts/navbar/navbar"
+        
         /= render "layouts/footer/footer"
     section
         #flash

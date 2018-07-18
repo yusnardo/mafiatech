@@ -1,0 +1,14 @@
+en:
+  login:
+    title_big: "Login to MafiaTech"
+    title: "Login to your %{home_link} account"
+    remember: "Remember me"
+    forgot: "Forgot password?"
+    register: "Don't have an account? %{register_link} here, it's FREE."
+    placeholder:
+      username: "Your email or username"
+      password: "Your password"
+    error:
+      username: "You need to input your registered email or username"
+      password: "You need to input your registered password"
+      username_2: "The username or password combination you entered is incorrect."
