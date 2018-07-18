@@ -55,8 +55,6 @@ p {
 .fl-hellobar-info {
     padding-top: 5px;
     padding-bottom: 5px;
-    padding-left: 100px;
-    padding-right: 100px;
     background-color: #000000;
     color: #c7c7c7;
     font-size: 12px;
@@ -77,12 +75,11 @@ p {
     padding-left: 5px;
     padding-right: 5px;
 }
-.centering{
-	margin-left: 100px;
-	margin-right: 100px;
-}
 .nav-link{
 	padding-top: 13px;
+}
+.navbar-nav{
+    padding-left: 25px;
 }
 .navbar-nav>li.open>.dropdown-menu, .open .dropdown-menu {
     border-radius: 10px;
@@ -154,4 +151,7 @@ p {
 .card{
     margin-right: 30px;
     margin-left: 30px;
+}
+.push-left{
+    margin-right:35px;
 }

@@ -3,6 +3,8 @@ id:
     link:
       course: "Modul"
       blog: "Blog"
+      login: "Masuk"
+      register: "Daftar"
     info:
       consult: "Bertanya disini :"
       mail: "yus21newbie@gmail.com"

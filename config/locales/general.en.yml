@@ -3,6 +3,8 @@ en:
     link:
       course: "Course"
       blog: "Blog"
+      login: "Login"
+      register: "Register"
     info:
       consult: "Ask me here :"
       mail: "yus21newbie@gmail.com"

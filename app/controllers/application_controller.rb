@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  include Clearance::Controller
 	UTM = %w(utm_source utm_medium utm_campaign utm_term)
 	AVAILABLE_COUNTRY = ['en', 'id']
 
